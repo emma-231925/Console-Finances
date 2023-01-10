@@ -118,3 +118,13 @@ for (i = 0; i < differences.length; i++){
 }
 
 console.log("Greatest Increase in Profits: " + greatestProfit[0], "($"+ greatestProfit[1] +")")
+
+let minValue = differences.reduce((a, b) => Math.min(a, b), Infinity);
+
+for (i = 0; i < differences.length; i++){
+    if (differences[i] === minValue){
+        lowestProfit = finances[i + 1];
+    }
+}
+
+console.log("Greatest Decrease in Profits: " + lowestProfit[0], "($"+ lowestProfit[1] +")")
