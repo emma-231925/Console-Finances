@@ -107,6 +107,14 @@ for (i = 0; i < differences.length; i++) {
     averageDifference += differences[i];
 }
 averageDifference = averageDifference / differences.length;
-console.log("Average Change: $" + averageDifference.toFixed(2))
+console.log("Average Change: $" + averageDifference.toFixed(2));
 
+let maxValue = differences.reduce((a, b) => Math.max(a, b), -Infinity);
 
+for (i = 0; i < differences.length; i++){
+    if (differences[i] === maxValue){
+        greatestProfit = finances[i + 1];
+    }
+}
+
+console.log("Greatest Increase in Profits: " + greatestProfit[0], "($"+ greatestProfit[1] +")")
