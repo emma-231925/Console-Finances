@@ -86,3 +86,27 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+let totalFinances = 0;
+let differences = []; //create array of monthly changes
+let averageDifference = 0;
+
+console.log("Financial Analysis");
+console.log("---------------------------");
+console.log("Months:", finances.length);
+
+for (i = 0; i < finances.length; i++) {
+    totalFinances += finances[i][1];
+}
+console.log("Total: $" + totalFinances);
+
+for (i = 1; i < finances.length; i++) {
+    differences.push(finances[i][1] - finances[i-1][1]);
+}
+
+for (i = 0; i < differences.length; i++) {
+    averageDifference += differences[i];
+}
+averageDifference = averageDifference / differences.length;
+console.log("Average Change: $" + averageDifference.toFixed(2))
+
+
